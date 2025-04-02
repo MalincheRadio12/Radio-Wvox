@@ -46,29 +46,39 @@
             margin: auto;
             padding: 0;
        }
+        /* Contenedor compacto y más pequeño */
+         .compact-counter {
+            display: inline-flex;
+            align-items: center;
+            background: #000000; /* Fondo del contador */
+            color: #fff; /* Color del texto */
+            padding: 3px 8px; /* Reducir padding interno */
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+            font-family: Arial, sans-serif;
+            font-size: 12px; /* Tamaño del texto más pequeño */
+            position: fixed;
+            top: 50px; /* Más cerca del borde superior */
+            right: 5px; /* Más cerca del borde derecho */
+            z-index: 1000; /* Siempre visible */
+            height: 30px; /* Altura fija más pequeña */
+        }
+
+        /* Ícono de audífonos */
+        .compact-counter .icon {
+            font-size: 14px; /* Tamaño reducido del ícono */
+            margin-right: 5px; /* Espaciado reducido */
+        }
+
+        /* Número de oyentes */
+        .compact-counter .count {
+            font-weight: bold;
+            font-size: 12px; /* Reducir tamaño del número */
+            line-height: 1; /* Asegura alineación vertical perfecta */
+        }
+
                 
-       #counter-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    text-align: center;
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#counter {
-    font-size: 2em;
-    margin: 10px 0;
-}
-
-button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-}
+ 
 
         #comment-btn,
         #info-btn,
@@ -443,15 +453,12 @@ body {
         Tu navegador no soporta el elemento de video.
       </video>
 
-     <div id="counter-container">
-    <h1>Contador</h1>
-    <p id="counter">0</p>
-    <button id="increase">Aumentar</button>
-    <button id="decrease">Disminuir</button>
-    <button id="reset">Reset</button>
+    <!-- Contador compacto -->
+<div class="compact-counter">
+    <div class="icon"><i class="fas fa-headphones"></i></div>
+    <div class="count" id="listenerCount">0</div>
 </div>
 
-    
 
     <div id="lunaradio">
         
@@ -667,6 +674,38 @@ body {
         // Cambia el tiempo (en milisegundos) según tus necesidades
         setInterval(nextImage, 5000);
     </script>
+
+    <script>
+    // Contador dinámico (fake)
+    const listenerCount = document.getElementById('listenerCount');
+    let currentCount = Math.floor(Math.random() * 200) + 80; // Número inicial de oyentes
+
+    function updateCount() {
+        // Simular un aumento o disminución aleatoria
+        const change = Math.floor(Math.random() * 20) - 10; // Rango: -10 a +10
+        const newCount = currentCount + change;
+
+        // Asegurarse de que el número no baje de 50
+        if (newCount >= 50) {
+            listenerCount.textContent = newCount;
+            listenerCount.classList.remove('up', 'down');
+
+            // Agregar animación según el cambio
+            if (change > 0) {
+                listenerCount.classList.add('up');
+            } else if (change < 0) {
+                listenerCount.classList.add('down');
+            }
+
+            // Actualizar el contador actual
+            currentCount = newCount;
+        }
+    }
+
+    // Actualizar el contador cada 9 segundos
+    setInterval(updateCount, 9000);
+</script>
+
      
 
 <script>
