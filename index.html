@@ -46,43 +46,44 @@
             margin: auto;
             padding: 0;
        }
-  /* Contenedor más grande en la esquina superior izquierda */
+/* Contenedor compacto en la esquina superior izquierda */
 .compact-counter {
     display: inline-flex;
     align-items: center;
     background: #000000; /* Fondo del contador */
     color: #fff; /* Color del texto */
-    padding: 10px 15px; /* Aumentar padding interno */
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    padding: 7px 12px; /* Reducir padding interno */
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Sombra moderada */
     font-family: Arial, sans-serif;
-    font-size: 18px; /* Aumentar tamaño del texto */
+    font-size: 16px; /* Reducir tamaño del texto */
     position: fixed;
-    top: 10px; /* Más pegado al borde superior */
-    left: 5px; /* Mover al lado izquierdo */
+    top: 10px; /* Pegado al borde superior */
+    left: 5px; /* Pegado al lado izquierdo */
     z-index: 1000; /* Siempre visible */
-    height: 50px; /* Altura más grande */
+    height: 40px; /* Tamaño más compacto */
 }
 
 /* Ícono de audífonos */
 .compact-counter .icon {
-    font-size: 22px; /* Aumentar tamaño del ícono */
-    margin-right: 8px; /* Espaciado mayor */
+    font-size: 18px; /* Tamaño moderado del ícono */
+    margin-right: 6px; /* Espaciado reducido */
 }
 
 /* Número de oyentes */
 .compact-counter .count {
     font-weight: bold;
-    font-size: 20px; /* Aumentar tamaño del número */
-    line-height: 1; /* Asegura alineación vertical perfecta */
+    font-size: 16px; /* Tamaño ajustado del número */
+    line-height: 1; /* Asegura alineación vertical */
 }
 
 /* Efectos de animación */
 .count.up {
-    transform: scale(1.2); /* Animación más notable */
+    transform: scale(1.15); /* Animación sutil */
     color: #2ecc71; /* Verde al aumentar */
     transition: transform 0.2s ease-in-out, color 0.3s ease;
 }
+
 
                 
  
@@ -709,8 +710,9 @@ body {
         }
     }
 
-    // Actualizar el contador cada 9 segundos
-    setInterval(updateCount, 9000);
+    // Actualizar el contador cada 15 minutos (15 * 60 * 1000 milisegundos)
+setInterval(updateCount, 15 * 60 * 1000);
+
 </script>
 
      
