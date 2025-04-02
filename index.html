@@ -46,36 +46,43 @@
             margin: auto;
             padding: 0;
        }
-        /* Contenedor compacto y más pequeño */
-         .compact-counter {
-            display: inline-flex;
-            align-items: center;
-            background: #000000; /* Fondo del contador */
-            color: #fff; /* Color del texto */
-            padding: 3px 8px; /* Reducir padding interno */
-            border-radius: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
-            font-family: Arial, sans-serif;
-            font-size: 12px; /* Tamaño del texto más pequeño */
-            position: fixed;
-            top: 50px; /* Más cerca del borde superior */
-            right: 5px; /* Más cerca del borde derecho */
-            z-index: 1000; /* Siempre visible */
-            height: 30px; /* Altura fija más pequeña */
-        }
+  /* Contenedor más grande en la esquina superior izquierda */
+.compact-counter {
+    display: inline-flex;
+    align-items: center;
+    background: #000000; /* Fondo del contador */
+    color: #fff; /* Color del texto */
+    padding: 10px 15px; /* Aumentar padding interno */
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* Aumentar tamaño del texto */
+    position: fixed;
+    top: 10px; /* Más pegado al borde superior */
+    left: 5px; /* Mover al lado izquierdo */
+    z-index: 1000; /* Siempre visible */
+    height: 50px; /* Altura más grande */
+}
 
-        /* Ícono de audífonos */
-        .compact-counter .icon {
-            font-size: 14px; /* Tamaño reducido del ícono */
-            margin-right: 5px; /* Espaciado reducido */
-        }
+/* Ícono de audífonos */
+.compact-counter .icon {
+    font-size: 22px; /* Aumentar tamaño del ícono */
+    margin-right: 8px; /* Espaciado mayor */
+}
 
-        /* Número de oyentes */
-        .compact-counter .count {
-            font-weight: bold;
-            font-size: 12px; /* Reducir tamaño del número */
-            line-height: 1; /* Asegura alineación vertical perfecta */
-        }
+/* Número de oyentes */
+.compact-counter .count {
+    font-weight: bold;
+    font-size: 20px; /* Aumentar tamaño del número */
+    line-height: 1; /* Asegura alineación vertical perfecta */
+}
+
+/* Efectos de animación */
+.count.up {
+    transform: scale(1.2); /* Animación más notable */
+    color: #2ecc71; /* Verde al aumentar */
+    transition: transform 0.2s ease-in-out, color 0.3s ease;
+}
 
                 
  
