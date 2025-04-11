@@ -1,4 +1,32 @@
-// Abre el modal de chat
+
+
+
+// chat en vivo .................
+
+// Mostrar/Ocultar el selector de emojis
+document.getElementById('emojiButton').addEventListener('click', () => {
+    const emojiPicker = document.getElementById('emojiPicker');
+    emojiPicker.style.display = emojiPicker.style.display === 'block' ? 'none' : 'block';
+});
+
+// Agregar emoji al campo de entrada
+document.getElementById('emojiPicker').addEventListener('click', (e) => {
+    if (e.target.tagName === 'SPAN') {
+        const emoji = e.target.textContent;
+        const chatInput = document.getElementById('chat-input');
+        chatInput.value += emoji; // Agrega el emoji al campo de texto
+        chatInput.focus(); // Devuelve el foco al campo de texto
+        document.getElementById('emojiPicker').style.display = 'none'; // Cierra el selector
+    }
+});
+
+// Cerrar el selector si se hace clic fuera
+document.addEventListener('click', (e) => {
+    const emojiPicker = document.getElementById('emojiPicker');
+    if (!emojiPicker.contains(e.target) && e.target.id !== 'emojiButton') {
+        emojiPicker.style.display = 'none';
+    }
+});// Abre el modal de chat
 document.getElementById('chat-btn').onclick = function() {
     document.getElementById('chat-modal').classList.add('show');
 };
