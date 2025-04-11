@@ -85,8 +85,48 @@
 }
 
 
-                
- 
+        .emoji-button {
+    font-size: 20px;
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 20%;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+}
+
+.emoji-button:hover {
+    background-color: #e0e0e0;
+}
+
+.emoji-picker {
+    position: absolute;
+    bottom: 60px; /* Ajusta según la posición de tu chat */
+    left: 0px; /* Ajusta según la posición de tu input */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    display: none; /* Oculto inicialmente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.emoji-picker span {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 5px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.emoji-picker span:hover {
+    transform: scale(1.2);
+}
+
 
         #comment-btn,
         #info-btn,
@@ -483,16 +523,38 @@ body {
         <i class="fas fa-comments"></i>
     </div>
 
-    <div id="chat-modal">
+<div id="chat-modal">
         <div class="modal-close-btn" onclick="closeChatModal()">&times;</div>
         <div id="chat-container">
             <h2>Chat en Vivo 💬</h2>
             <div id="chat-messages"></div>
             
             <div id="chat-input-container">
+                <div class="emoji-picker" id="emojiPicker">
+                    <span>😀</span>
+                    <span>😂</span>
+                    <span>😍</span>
+                    <span>😎</span>
+                    <span>😭</span>
+                    <span>👍</span>
+                    <span>🔥</span>
+                    <span>❤️</span>
+                    <span>🎉</span>
+                    <span>😜</span>
+                    <span>💀</span>
+                    <span>🌹</span>
+                    <span>🍒</span>
+                    <span>🍕</span>
+                    <span>⚽</span>
+                    <span>⚾</span>
+                    <span>🌎</span>
+                    <span>🌑</span>
+                    <span>🚌</span>
+                    <span>👓</span>   
+                </div>
                 <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+                <button class="emoji-button" id="emojiButton">😊</button>
                 <button id="send-chat-btn" onclick="sendMessage()">Enviar</button>
-                
             </div>
         </div>
         
