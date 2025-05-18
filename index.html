@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-    
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Radio">
     <link rel="apple-touch-icon" href="js/8.png">
-    <meta name="msapplication-TileImage" content="js/8.png">
+    <meta name="msapplication-TileImage" content="js/audifonos.png">
     <meta name="msapplication-TileColor" content="#000000">
     <link rel="manifest" href="./manifest.json">
-    <script src="tuscript.js" defer></script>
-
-    
-    <title>Radio Wvox Fm.!! 📻 </title>
-    <link rel="shortcut icon" href="js/8.png" />
+    <title>Radio Wvox Fm.!! 📻</title>
+    <link rel="shortcut icon" href="js/audifonos.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         body {
@@ -32,101 +27,97 @@
             overflow-y: hidden;
             box-sizing: border-box;
             background-attachment: fixed;
-   
         }
+        
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-      }
+        }
 
         #lunaradio {
             width: 100%;
             height: 100%;
             margin: auto;
             padding: 0;
-       }
-/* Contenedor compacto en la esquina superior izquierda */
-.compact-counter {
-    display: inline-flex;
-    align-items: center;
-    background: #000000; /* Fondo del contador */
-    color: #fff; /* Color del texto */
-    padding: 7px 12px; /* Reducir padding interno */
-    border-radius: 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Sombra moderada */
-    font-family: Arial, sans-serif;
-    font-size: 16px; /* Reducir tamaño del texto */
-    position: fixed;
-    top: 10px; /* Pegado al borde superior */
-    left: 5px; /* Pegado al lado izquierdo */
-    z-index: 1000; /* Siempre visible */
-    height: 40px; /* Tamaño más compacto */
-}
+        }
+        
+        /* Contenedor compacto en la esquina superior izquierda */
+        .compact-counter {
+            display: inline-flex;
+            align-items: center;
+            background: #000000;
+            color: #fff;
+            padding: 7px 12px;
+            border-radius: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            position: fixed;
+            top: 10px;
+            left: 5px;
+            z-index: 1000;
+            height: 40px;
+        }
 
-/* Ícono de audífonos */
-.compact-counter .icon {
-    font-size: 18px; /* Tamaño moderado del ícono */
-    margin-right: 6px; /* Espaciado reducido */
-}
+        .compact-counter .icon {
+            font-size: 18px;
+            margin-right: 6px;
+        }
 
-/* Número de oyentes */
-.compact-counter .count {
-    font-weight: bold;
-    font-size: 16px; /* Tamaño ajustado del número */
-    line-height: 1; /* Asegura alineación vertical */
-}
+        .compact-counter .count {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1;
+        }
 
-/* Efectos de animación */
-.count.up {
-    transform: scale(1.15); /* Animación sutil */
-    color: #2ecc71; /* Verde al aumentar */
-    transition: transform 0.2s ease-in-out, color 0.3s ease;
-}
-
+        .count.up {
+            transform: scale(1.15);
+            color: #2ecc71;
+            transition: transform 0.2s ease-in-out, color 0.3s ease;
+        }
 
         .emoji-button {
-    font-size: 20px;
-    width: 40px;
-    height: 30px;
-    border: none;
-    border-radius: 20%;
-    background-color: #f3f3f3;
-    cursor: pointer;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-    margin-left: 5px;
-}
+            font-size: 20px;
+            width: 40px;
+            height: 30px;
+            border: none;
+            border-radius: 20%;
+            background-color: #f3f3f3;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            margin-left: 5px;
+        }
 
-.emoji-button:hover {
-    background-color: #e0e0e0;
-}
+        .emoji-button:hover {
+            background-color: #e0e0e0;
+        }
 
-.emoji-picker {
-    position: absolute;
-    bottom: 60px; /* Ajusta según la posición de tu chat */
-    left: 0px; /* Ajusta según la posición de tu input */
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    display: none; /* Oculto inicialmente */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-}
+        .emoji-picker {
+            position: absolute;
+            bottom: 60px;
+            left: 0px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            display: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+        }
 
-.emoji-picker span {
-    font-size: 20px;
-    cursor: pointer;
-    margin: 5px;
-    display: inline-block;
-    transition: transform 0.2s;
-}
+        .emoji-picker span {
+            font-size: 20px;
+            cursor: pointer;
+            margin: 5px;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
 
-.emoji-picker span:hover {
-    transform: scale(1.2);
-}
-
+        .emoji-picker span:hover {
+            transform: scale(1.2);
+        }
 
         #comment-btn,
         #info-btn,
@@ -142,17 +133,15 @@
         }
 
         @media (max-width: 100vh) {
-            
-         body { 
-            font-size: 1vw;
-        }
+            body { 
+                font-size: 1vw;
+            }
 
             #comment-btn,
             #info-btn,
             #contact-btn {
                 font-size:3vw;
                 padding: 1vw;
-                
             }
         }
 
@@ -170,11 +159,11 @@
             left: 22vw;
             margin-right: 1px;
         }
-        #comment-modal h2,
         
+        #comment-modal h2,
         #info-modal h2,
         #contact-modal h2 {
-            font-size: max(1.5vw, 20px); /* Establece el tamaño mínimo que deseas para los títulos */
+            font-size: max(1.5vw, 20px);
         }
 
         #comment-modal,
@@ -190,18 +179,18 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             z-index: 3;
             transition: opacity 0.5s ease-in-out;
-            max-width: 350px; /* Ajusta el valor según tus necesidades */
-            width: 90vw; /* Esto permite que la ventana sea del 90% del ancho de la ventana del navegador */
+            max-width: 350px;
+            width: 90vw;
         }
+        
         #info-container {
-            max-height: 400px; /* Ajusta el valor según tus necesidades */
+            max-height: 400px;
             overflow-y: auto;
-            scrollbar-width: thin; /* para navegadores Firefox */
-            scrollbar-color: #90EE90, #ffffff; /* para navegadores Firefox */
+            scrollbar-width: thin;
+            scrollbar-color: #90EE90, #ffffff;
             font-size: 18px;
         }
 
-        /* Estilos adicionales para navegadores WebKit (Chrome, Safari) */
         #info-container::-webkit-scrollbar {
             width: 10px;
         }
@@ -229,9 +218,10 @@
             width: 50vw;
             max-width: 300px;
         }
+        
         #contact-container {
-            text-align: center; /* Centra el contenido */
-            max-height: 100vh; /* Ajusta el valor según tus necesidades */
+            text-align: center;
+            max-height: 100vh;
             overflow-y: auto;
         }
 
@@ -295,269 +285,207 @@
         }
 
         #ad-images-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50%; /* Ajusta según tus necesidades */
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+        }
 
-    #ad-images {
-        text-align: center;
-    }
+        #ad-images {
+            text-align: center;
+        }
 
-    #ad-images img {
-        display: none; /* Inicia oculto */
-        max-width: 100%; /* Ajusta según tus necesidades */
-        max-height: 100vh; /* Ajusta según tus necesidades */
-    }
+        #ad-images img {
+            display: none;
+            max-width: 100%;
+            max-height: 100vh;
+        }
 
-    #ad-images img:first-child {
-        display: block; /* Muestra la primera imagen */
-    }
-    
+        #ad-images img:first-child {
+            display: block;
+        }
+        
+        #imagen-esquina {
+            position: fixed;
+            top: 1px;
+            right: 1px;
+            z-index: 999;
+        }
 
-    #imagen-esquina {
-    position: fixed;
-    top: 1px; /* Ajusta según tu preferencia */
-    right: 1px; /* Ajusta según tu preferencia */
-    z-index: 999; /* Asegura que esté encima de otros elementos */
-}
+        #imagen-esquina img {
+            width: 70px;
+            height: auto;
+        }
+        
+        #contact-modal {
+            font-size: 16px;
+        }
 
-#imagen-esquina img {
-    width: 70px; /* Ajusta según tu preferencia */
-    height: auto; /* Mantiene la proporción */
-    /* border-radius: 50%;  Elimina esta línea para que la imagen no sea redonda */
-}
-#contact-modal {
-    /* ... otros estilos ... */
-    font-size: 16px; /* Establece el tamaño de fuente predeterminado */
-}
+        #contact-modal p {
+            min-width: 50px;
+            font-size: max(16px, 2vw);
+        }
 
-#contact-modal p {
-    min-width: 50px; /* Establece un ancho mínimo para los párrafos */
-    font-size: max(16px, 2vw); /* Establece el tamaño de fuente mínimo entre 18px y 2vw */
-}
+        #offline-message h1 {
+            font-size: 7vw;
+        }
 
-#offline-message h1 {
-    font-size: 7vw; /* Cambia el tamaño del texto según tus preferencias */
-}
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
 
-#video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
+        body {
+            font-family: Arial, sans-serif;
+        }
 
+        #chat-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 3;
+            transition: opacity 0.5s ease-in-out;
+            max-width: 350px;
+            width: 90vw;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-}
+        #chat-modal.show {
+            display: block;
+        }
 
+        #chat-container {
+            text-align: center;
+            font-size: 18px;
+        }
 
-#chat-modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    z-index: 3;
-    transition: opacity 0.5s ease-in-out;
-    max-width: 350px;
-    width: 90vw;
-}
+        #chat-messages {
+            max-height: 30vh;
+            overflow-y: auto;
+            margin-bottom: 2vh;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-#chat-modal.show {
-    display: block;
-}
+        #chat-input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-#chat-container {
-    text-align: center;
-    font-size: 18px;
-}
+        #chat-input {
+            width: 70%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-#chat-messages {
-    max-height: 30vh;
-    overflow-y: auto;
-    margin-bottom: 2vh;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        #send-chat-btn {
+            width: 25%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-#chat-input-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        #send-chat-btn:hover {
+            background-color: #0056b3;
+        }
 
-#chat-input {
-    width: 70%;
-    padding: 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .modal-close-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+        }
 
-#send-chat-btn {
-    width: 25%;
-    padding: 8px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    font-size: 14px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        /* Ajustes generales para el botón de chat en vivo */
+        #chat-btn {
+            position: fixed;
+            bottom: 2vh;
+            right: 2vw;
+            background-color: #98FB98;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2vh;
+            padding: 2vh;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: pulse 1s infinite;
+            transition: background-color 0.3s;
+        }
 
-#send-chat-btn:hover {
-    background-color: #0056b3;
-}
+        @media (max-width: 768px) {
+            #chat-btn {
+                font-size: 3vw;
+                padding: 3vw;
+            }
+        }
 
-.modal-close-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-}
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
 
-/* Ajustes generales para el botón de chat en vivo */
-#chat-btn {
-    position: fixed;
-    bottom: 2vh; /* Más cerca del borde inferior */
-    right: 2vw;  /* Más cerca del borde derecho */
-    background-color: 	#98FB98;
-    color:  #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2vh; /* Tamaño de fuente similar a los otros botones */
-    padding: 2vh;   /* Relleno similar a los otros botones */
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: pulse 1s infinite; /* Animación aplicada de forma continua */
-    transition: background-color 0.3s;
-}
-
-/* Ajustes específicos para dispositivos móviles */
-@media (max-width: 768px) {
-    #chat-btn {
-        font-size: 3vw; /* Tamaño de fuente ajustado para móviles */
-        padding: 3vw;   /* Relleno ajustado para móviles */
-    }
-}
-
-/* Animación de pulsación */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Efecto de hover (opcional) para cambiar el color del fondo */
-#chat-btn:hover {
-    background-color: #0056b3;
-}
-
-
-
+        #chat-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
 <body>
-     <div id="offline-message" style="display: none; background-color: rgba(0, 0, 0, 0.8); color: white; position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999;">
-    <h1>Sin conexión a Internet</h1>
-    <img src="js/no-wifi.png" alt="Imagen de conexión perdida" style="width: 100px; height: auto;">
-    <!-- Puedes personalizar este mensaje como desees -->
-</div>
-
-
-
+    <div id="offline-message" style="display: none; background-color: rgba(0, 0, 0, 0.8); color: white; position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999;">
+        <h1>Sin conexión a Internet</h1>
+        <img src="js/no-wifi.png" alt="Imagen de conexión perdida" style="width: 100px; height: auto;">
+    </div>
 
     <video autoplay muted loop id="video-background" preload="auto">
         <source src="js/fondo2.mp4" type="video/mp4">
-        <!-- Agrega formatos adicionales del video aquí si es necesario -->
         Tu navegador no soporta el elemento de video.
-      </video>
+    </video>
 
     <!-- Contador compacto -->
-<div class="compact-counter">
-    <div class="icon"><i class="fas fa-headphones"></i></div>
-    <div class="count" id="listenerCount">0</div>
-</div>
-
-
-    <div id="lunaradio">
-        
-        </div>
+    <div class="compact-counter">
+        <div class="icon"><i class="fas fa-headphones"></i></div>
+        <div class="count" id="listenerCount">0</div>
     </div>
 
-    <!-- Agrega esto al final del body de tu HTML -->
-<div id="notification" style="display: none;">
-    <p>¡Estás escuchando Radio Wvox Fm!</p>
-</div>
-    
+    <div id="lunaradio"></div>
 
+    <!-- Notificación -->
+    <div id="notification" style="display: none;">
+        <p>¡Estás escuchando Radio Wvox Fm!</p>
+    </div>
+    
+    <!-- Botones flotantes -->
     <div id="chat-btn">
         <i class="fas fa-comments"></i>
-    </div>
-
-<div id="chat-modal">
-        <div class="modal-close-btn" onclick="closeChatModal()">&times;</div>
-        <div id="chat-container">
-            <h2>Chat en Vivo 💬</h2>
-            <div id="chat-messages"></div>
-            
-            <div id="chat-input-container">
-                <div class="emoji-picker" id="emojiPicker">
-                    <span>😀</span>
-                    <span>😂</span>
-                    <span>😍</span>
-                    <span>😎</span>
-                    <span>😭</span>
-                    <span>👍</span>
-                    <span>🔥</span>
-                    <span>❤️</span>
-                    <span>🎉</span>
-                    <span>😜</span>
-                    <span>💀</span>
-                    <span>🌹</span>
-                    <span>🍒</span>
-                    <span>🍕</span>
-                    <span>⚽</span>
-                    <span>⚾</span>
-                    <span>🌎</span>
-                    <span>🌑</span>
-                    <span>🚌</span>
-                    <span>👓</span>   
-                </div>
-                <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
-                <button class="emoji-button" id="emojiButton">😊</button>
-                <button id="send-chat-btn" onclick="sendMessage()">Enviar</button>
-            </div>
-        </div>
-        
     </div>
 
     <div id="comment-btn">
@@ -571,8 +499,30 @@ body {
     <div id="contact-btn">
         <i class="fas fa-envelope"></i>
     </div>
+    
     <div id="imagen-esquina">
         <img src="js/logo.png" alt="Imagen Esquina">
+    </div>
+
+    <!-- Modales -->
+    <div id="chat-modal">
+        <div class="modal-close-btn" onclick="closeChatModal()">&times;</div>
+        <div id="chat-container">
+            <h2>Chat en Vivo 💬</h2>
+            <div id="chat-messages"></div>
+            
+            <div id="chat-input-container">
+                <div class="emoji-picker" id="emojiPicker">
+                    <span>😀</span><span>😂</span><span>😍</span><span>😎</span><span>😭</span>
+                    <span>👍</span><span>🔥</span><span>❤️</span><span>🎉</span><span>😜</span>
+                    <span>💀</span><span>🌹</span><span>🍒</span><span>🍕</span><span>⚽</span>
+                    <span>⚾</span><span>🌎</span><span>🌑</span><span>🚌</span><span>👓</span>   
+                </div>
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+                <button class="emoji-button" id="emojiButton">😊</button>
+                <button id="send-chat-btn" onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
     </div>
 
     <div id="comment-modal">
@@ -582,18 +532,12 @@ body {
             <img src="js/publicidad1.jpg" alt="h" width="400" height="340">
             <img src="js/publicidad3.jpg" alt="h" width="400" height="340">
             <img src="js/publicidad4.jpg" alt="h" width="400" height="340">
-            
             <img src="js/publicidad5.webp" alt="h" width="400" height="340">
             <img src="js/publicidad6.webp" alt="h" width="400" height="340">
             <img src="js/publicidad7.webp" alt="h" width="400" height="340">
             <img src="js/publicidad8.webp" alt="h" width="400" height="340">
             <img src="js/publicidad9.webp" alt="h" width="400" height="350">
-        
-    
-
-            <!-- Agrega más imágenes según sea necesario -->
         </div>
-
         <div id="comments-container"></div>
     </div>
 
@@ -602,96 +546,82 @@ body {
         <h2>Información ℹ️</h2>
         <div id="info-container">
             <a>¡Bienvenido a Radio Wvox Fm!</a>
-          <img src="js/foto1.webp" alt="" style="width: 150%; max-width: 150px; display: block; margin: 0 auto; border-radius: 10px;">
-            <p>"Radio Wvox Fm" es una emisora de radio digital líder en innovación y entretenimiento.  </p>
-            
-            <p> Nuestra misión es conectar a nuestra audiencia con la música, noticias, y contenido que los apasiona, en cualquier momento y lugar. </p>
-            <p>Nuestra plataforma ofrece: </p>
+            <img src="js/foto1.webp" alt="" style="width: 150%; max-width: 150px; display: block; margin: 0 auto; border-radius: 10px;">
+            <p>"Radio Wvox Fm" es una emisora de radio digital líder en innovación y entretenimiento.</p>
+            <p>Nuestra misión es conectar a nuestra audiencia con la música, noticias, y contenido que los apasiona, en cualquier momento y lugar.</p>
+            <p>Nuestra plataforma ofrece:</p>
             <p>* Programación en vivo y grabada</p>
             <p>* Podcasts exclusivos</p>
             <p>* Noticias actualizadas</p>
             <p>* Música de todos los géneros</p>
-            <p>* Entrevistas y debates </p>
-            <p>* Contenido interactivo </p>
-            
-            <p>Nuestro equipo de profesionales está comprometido con brindar una experiencia de audio de alta calidad, accesible desde cualquier dispositivo conectado a Internet.  </p>
-            
+            <p>* Entrevistas y debates</p>
+            <p>* Contenido interactivo</p>
+            <p>Nuestro equipo de profesionales está comprometido con brindar una experiencia de audio de alta calidad, accesible desde cualquier dispositivo conectado a Internet.</p>
             <p>Misión:</p>
             <p>"Conectar a la comunidad a través de la música y la palabra, brindando un espacio de expresión tanto cultural como de entretenimiento que inspire, eduque y motive a nuestros oyentes, manteniendo siempre la autenticidad y la pasión por la radio".</p>
-            
             <p>Visión:</p>
-            <p>"Ser la radio líder en la difusión de contenido innovador y de calidad, reconocida por nuestra creatividad, diversidad y compromiso con la comunidad, generando un impacto positivo en la vida de nuestros oyentes y siendo un referente en la industria de la radio". </p>
-           
-            <p>Valores: </p>
-            <p>* Innovación </p>
-            <p>* Calidad </p>
-            <p>* Diversidad </p>
+            <p>"Ser la radio líder en la difusión de contenido innovador y de calidad, reconocida por nuestra creatividad, diversidad y compromiso con la comunidad, generando un impacto positivo en la vida de nuestros oyentes y siendo un referente en la industria de la radio".</p>
+            <p>Valores:</p>
+            <p>* Innovación</p>
+            <p>* Calidad</p>
+            <p>* Diversidad</p>
             <p>* Accesibilidad</p>
             <p>* Compromiso con la nuestra gente Tlaxcalteca</p>
-            <p>"La Voz de tus sentidos" </p>
+            <p>"La Voz de tus sentidos"</p>
             <img src="js/foto7.webp" alt="" style="width: 150%; max-width: 150px; display: block; margin: 0 auto; border-radius: 10px;">
-            <hr> </hr>
-             <p> ®Zorb FM - Productora de Medios Digitales </p>
+            <hr></hr>
+            <p>®Zorb FM - Productora de Medios Digitales</p>
             <img src="js/uttlogo.png" alt="" style="width: 20%; max-width: 60px; display: block; margin: 0 auto;">
-            <hr> </hr>
-            <a class="social-btn" href="https://api.whatsapp.com/send/?phone=2411179924&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp" ></i> Whatsapp</a>
-            
+            <hr></hr>
+            <a class="social-btn" href="https://api.whatsapp.com/send/?phone=2411179924&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
         </div>
     </div>
 
     <div id="contact-modal">
         <span class="modal-close-btn" onclick="closeContact()">&times;</span>
-        <h2>Contacto 📧 </h2>
-        
+        <h2>Contacto 📧</h2>
         <div id="contact-container">
             <a class="social-btn" href="https://www.facebook.com/profile.php?id=100063854940679" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
             <a class="social-btn" href="https://instagram.com/radiowvox/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a class="social-btn" href="https://chat.whatsapp.com/IIh0QsuIKfM9mFd57e36gv?fbclid=IwY2xjawGUuVNleHRuA2FlbQIxMQABHT7z6hfaFcQDr6rDpFLONMeL6CFDn0pMgZa4a_vHe6B0a-Ziy63-z1212g_aem_IE3kZG8RSLJzFK3oyhjFfA" target="_blank"><i class="fab fa-whatsapp" ></i> Whatsapp</a>
-            <a class="social-btn" href="https://www.tiktok.com/@radio.wvox.fm?_t=8rLESKcdJHb&_r=1" target="_blank">   <i class="fab fa-tiktok"></i> TikTok </a>
-          
+            <a class="social-btn" href="https://chat.whatsapp.com/IIh0QsuIKfM9mFd57e36gv?fbclid=IwY2xjawGUuVNleHRuA2FlbQIxMQABHT7z6hfaFcQDr6rDpFLONMeL6CFDn0pMgZa4a_vHe6B0a-Ziy63-z1212g_aem_IE3kZG8RSLJzFK3oyhjFfA" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+            <a class="social-btn" href="https://www.tiktok.com/@radio.wvox.fm?_t=8rLESKcdJHb&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
         </div>
-        <P>Ubicación 📍 </P>
-        <p> Dirección: Ezequiel M. Gracia 111 Col, Indeco, 90350 Cdad. de Apizaco, Tlax.</p>
+        <p>Ubicación 📍</p>
+        <p>Dirección: Ezequiel M. Gracia 111 Col, Indeco, 90350 Cdad. de Apizaco, Tlax.</p>
         <div id="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15069.26070645759!2d-98.1513766!3d19.4067092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d02159542eb457%3A0x43d1725a19eb53f1!2sRadio%20Wvox%20Fm!5e0!3m2!1ses-419!2smx!4v1703809831513!5m2!1ses-419!2smx" width="150" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15069.26070645759!2d-98.1513766!3d19.4067092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d02159542eb457%3A0x43d1725a19eb53f1!2sRadio%20Wvox%20Fm!5e0!3m2!1ses-419!2smx!4v1703809831513!5m2!1ses-419!2smx" width="150" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-
-
-        
     </div>
 
-    <script src="./script.js"> </script>
+    <!-- Scripts -->
+    <script src="./script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/lunaradio-sincors.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="tuscript.js" defer></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let count = 0;
-        const counterDisplay = document.getElementById("counter");
-        
-        document.getElementById("increase").addEventListener("click", function() {
-            count++;
-            counterDisplay.textContent = count;
+        document.addEventListener("DOMContentLoaded", function() {
+            let count = 0;
+            const counterDisplay = document.getElementById("counter");
+            
+            document.getElementById("increase").addEventListener("click", function() {
+                count++;
+                counterDisplay.textContent = count;
+            });
+
+            document.getElementById("decrease").addEventListener("click", function() {
+                count--;
+                counterDisplay.textContent = count;
+            });
+
+            document.getElementById("reset").addEventListener("click", function() {
+                count = 0;
+                counterDisplay.textContent = count;
+            });
         });
 
-        document.getElementById("decrease").addEventListener("click", function() {
-            count--;
-            counterDisplay.textContent = count;
-        });
-
-        document.getElementById("reset").addEventListener("click", function() {
-            count = 0;
-            counterDisplay.textContent = count;
-        });
-    });
-</script>
-
-
-    
-
-    <script>
         // Verificar si el navegador soporta notificaciones
         if ('Notification' in window) {
             // Solicitar permiso para mostrar notificaciones
@@ -701,8 +631,8 @@ body {
                     function showNotification() {
                         const notificationOptions = {
                             body: '¡Estás escuchando Radio Wvox Fm!',
-                            icon: 'js/7.png', // Asegúrate de tener un ícono en tu servidor
-                            badge: 'js/7.png', // Asegúrate de tener una insignia en tu servidor
+                            icon: 'js/audifonos.png',
+                            badge: 'js/audifonos.png',
                         };
                         new Notification('Radio Wvox Fm', notificationOptions);
                     }
@@ -715,9 +645,8 @@ body {
                 }
             });
         }
-    </script>
-    <script>
-        // Agrega este script para el cambio de imágenes
+
+        // Cambio de imágenes en anuncios
         var currentIndex = 0;
         var images = document.querySelectorAll('#ad-images img');
         var totalImages = images.length;
@@ -732,70 +661,55 @@ body {
             showImage(currentIndex);
         }
     
-        // Cambia el tiempo (en milisegundos) según tus necesidades
         setInterval(nextImage, 5000);
-    </script>
 
-    <script>
-    // Contador dinámico (fake)
-    const listenerCount = document.getElementById('listenerCount');
-    let currentCount = Math.floor(Math.random() * 200) + 80; // Número inicial de oyentes
+        // Contador dinámico (fake)
+        const listenerCount = document.getElementById('listenerCount');
+        let currentCount = Math.floor(Math.random() * 200) + 80;
 
-    function updateCount() {
-        // Simular un aumento o disminución aleatoria
-        const change = Math.floor(Math.random() * 20) - 10; // Rango: -10 a +10
-        const newCount = currentCount + change;
+        function updateCount() {
+            const change = Math.floor(Math.random() * 20) - 10;
+            const newCount = currentCount + change;
 
-        // Asegurarse de que el número no baje de 50
-        if (newCount >= 50) {
-            listenerCount.textContent = newCount;
-            listenerCount.classList.remove('up', 'down');
+            if (newCount >= 50) {
+                listenerCount.textContent = newCount;
+                listenerCount.classList.remove('up', 'down');
 
-            // Agregar animación según el cambio
-            if (change > 0) {
-                listenerCount.classList.add('up');
-            } else if (change < 0) {
-                listenerCount.classList.add('down');
+                if (change > 0) {
+                    listenerCount.classList.add('up');
+                } else if (change < 0) {
+                    listenerCount.classList.add('down');
+                }
+
+                currentCount = newCount;
             }
-
-            // Actualizar el contador actual
-            currentCount = newCount;
         }
-    }
 
-    // Actualizar el contador cada 1 minuto (60 * 1000 milisegundos)
-setInterval(updateCount, 60 * 1000);
+        setInterval(updateCount, 60 * 1000);
 
-</script>
-
-     
-
-<script>
-    function checkOnlineStatus() {
-        var offlineMessage = document.getElementById("offline-message");
-        if (!navigator.onLine) {
-            offlineMessage.style.display = "flex";
-        } else {
-            offlineMessage.style.display = "none";
+        // Verificar estado de conexión
+        function checkOnlineStatus() {
+            var offlineMessage = document.getElementById("offline-message");
+            if (!navigator.onLine) {
+                offlineMessage.style.display = "flex";
+            } else {
+                offlineMessage.style.display = "none";
+            }
         }
-    }
 
-    window.addEventListener("load", function() {
-        checkOnlineStatus();
-
-        window.addEventListener("online", function() {
+        window.addEventListener("load", function() {
             checkOnlineStatus();
+
+            window.addEventListener("online", function() {
+                checkOnlineStatus();
+            });
+
+            window.addEventListener("offline", function() {
+                checkOnlineStatus();
+            });
         });
 
-        window.addEventListener("offline", function() {
-            checkOnlineStatus();
-        });
-    });
-</script>
-
-
-
-    <script>
+        // Configuración del reproductor de radio
         $("#lunaradio").lunaradio({ 
             userinterface: "big",
             backgroundcolor: "",
@@ -830,6 +744,7 @@ setInterval(updateCount, 60 * 1000);
             autoplay: "true"
         });
 
+        // Eventos de los botones
         $("#comment-btn").click(function () {
             $("#comment-modal").addClass("show");
             loadComments();
@@ -846,8 +761,6 @@ setInterval(updateCount, 60 * 1000);
         $(".modal-close-btn").click(function () {
             $(".modal").removeClass("show");
         });
-
-        
 
         function closeComments() {
             $("#comment-modal").removeClass("show");
@@ -867,7 +780,6 @@ setInterval(updateCount, 60 * 1000);
         }
     </script>
 </body>
-
 </html>
 
 
