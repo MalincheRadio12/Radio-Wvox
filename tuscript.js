@@ -38,13 +38,13 @@ function closeChatModal() {
 
 // Configuración de Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyCwBKq4hOSc4TmY87xMUJCGhfMV8afA4Qs",
-    authDomain: "radio-wvox-fm-28f00.firebaseapp.com",
-    projectId: "radio-wvox-fm-28f00",
-    storageBucket: "radio-wvox-fm-28f00.firebasestorage.app",
-    messagingSenderId: "554075648438",
-    appId: "1:554075648438:web:425fefbfe31707bd3e1117",
-    measurementId: "G-N8T7F4BD5C"
+  apiKey: "AIzaSyBN9IUF9MGQOYmA5Xd7n_l0NyF_RmM_EBU",
+  authDomain: "la-rielera.firebaseapp.com",
+  projectId: "la-rielera",
+  storageBucket: "la-rielera.firebasestorage.app",
+  messagingSenderId: "500081422521",
+  appId: "1:500081422521:web:54a659510f38c63ce56b68",
+  measurementId: "G-D6LHZX81R5"
 };
 
 // Inicializa Firebase
@@ -76,4 +76,5 @@ chatRef.orderBy('timestamp').onSnapshot(function(snapshot) {
         }
     });
 });
+
 
