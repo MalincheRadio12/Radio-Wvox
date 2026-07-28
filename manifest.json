@@ -1,65 +1,79 @@
 {
-  "name": "Radio Wvox Fm",
-  "short_name": "Radio Wvox Fm",
-  "description": "Radio Online",
+  "name": "Radio Wvox Fm ",
+  "short_name": "Radio Wvox",
+  "description": "Escucha Radio Wvox Fm en vivo, la mejor música y entretenimiento 24/7",
   "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
-  "theme_color": "#0bdb04",
+  "theme_color": "#0084ff",
   "scope": "/",
-  "lang":"es-MX",
+  "lang": "es-MX",
+  "categories": ["music", "entertainment", "news"],
+  "prefer_related_applications": false,
   "icons": [
     {
-      "src": "js/01.png",
-      "sizes": "1024x1024",
-      "type": "image/png"
-    },
-    {
-      "src": "js/2.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "js/3.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "js/4.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "js/5.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "js/6.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "js/7.png",
-      "sizes": "96x96",
-      "type": "image/png"
+      "src": "js/9.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "js/8.png",
       "sizes": "64x64",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "js/9.png",
-      "sizes": "32x32",
-      "type": "image/png"
+      "src": "js/7.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "js/1",
+      "src": "js/6.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "js/5.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "js/4.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "js/3.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "js/2.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "js/01.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "js/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "android",
+      "label": "Pantalla principal de Radio Wvox"
     }
   ]
-  
 }
-
