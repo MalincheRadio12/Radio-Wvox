@@ -42,11 +42,13 @@ let messageCount = 0; // Para alternar mensajes
 // ========================================== //
 function openChatModal() {
     chatModal.style.display = 'block';
+    chatModal.classList.add('show');
     chatModal.style.opacity = '1';
     setTimeout(() => chatInput.focus(), 300);
 }
 
 function closeChatModal() {
+    chatModal.classList.remove('show');
     chatModal.style.display = 'none';
     chatModal.style.opacity = '0';
 }
@@ -201,6 +203,13 @@ document.addEventListener('click', () => {
 // 7. Cerrar modal con tecla ESC
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && chatModal.style.display === 'block') {
+        closeChatModal();
+    }
+});
+
+// 8. Cerrar modal al hacer clic fuera del contenido
+chatModal.addEventListener('click', (e) => {
+    if (e.target === chatModal) {
         closeChatModal();
     }
 });
