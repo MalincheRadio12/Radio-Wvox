@@ -988,6 +988,8 @@ body {
     }
 }
 
+
+
 /* ========================================== */
 /* MENSAJE DE BIENVENIDA - VERSIÓN MINIMAL   */
 /* ========================================== */
@@ -1129,7 +1131,94 @@ body {
         font-size: 14px;
     }
 }
+/* ========================================== */
+/* ESTILOS UNIFICADOS PARA EL MODAL DEL CHAT */
+/* ========================================== */
 
+#chat-modal {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#chat-modal.show {
+    display: block !important;
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* El botón de cierre usa la misma clase que los demás modales */
+#chat-modal .modal-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    cursor: pointer;
+    font-size: 22px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    z-index: 10;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #0084ff;
+    font-weight: 300;
+    border: none;
+}
+
+#chat-modal .modal-close-btn:hover {
+    background: #0066cc;
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
+}
+
+#chat-modal .modal-close-btn:active {
+    transform: rotate(90deg) scale(0.9);
+}
+
+/* ========================================== */
+/* RESPONSIVE PARA EL MODAL DEL CHAT          */
+/* ========================================== */
+
+@media (max-width: 768px) {
+    #chat-modal {
+        max-width: 95vw;
+        padding: 18px;
+        max-height: 90vh;
+        border-width: 2px;
+    }
+    
+    #chat-modal .modal-close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        top: 12px;
+        right: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #chat-modal {
+        max-width: 98vw;
+        padding: 14px;
+        max-height: 92vh;
+        border-width: 2px;
+    }
+    
+    #chat-modal .modal-close-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        top: 10px;
+        right: 12px;
+    }
+}
 /* ========================================== */
 /* NOTIFICACIONES PERSONALIZADAS             */
 /* ========================================== */
